@@ -24,10 +24,13 @@ app.post("/chat", async (req, res) => {
     res.json({
       reply: response.choices[0].message.content
     });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+} catch (err) {
+  console.log("FULL ERROR 👉", err);
+
+  res.status(500).json({
+    error: err.message || "Unknown error"
+  });
+        }
 
 const PORT = process.env.PORT || 3000;
 
