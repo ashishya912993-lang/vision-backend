@@ -13,6 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/chat", async (req, res) => {
+  console.log("CHAT HIT 🔥");
   try {
     const response = await client.chat.completions.create({
       model: "gpt-4o-mini",
