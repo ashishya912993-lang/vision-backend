@@ -30,7 +30,8 @@ app.post("/chat", async (req, res) => {
   res.status(500).json({
     error: err.message || "Unknown error"
   });
-        }
+      }
+});
 
 const PORT = process.env.PORT || 3000;
 
